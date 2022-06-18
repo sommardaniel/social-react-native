@@ -4,7 +4,7 @@ export default styles = StyleSheet.create({
     flex: 1,
     color: "#a7ecf2",
     backgroundColor: "#242526",
-    alignItems: "center",
-    justifyContent: "center",
+    // alignItems: "center",
+    justifyContent: "flex-start",
   },
 })

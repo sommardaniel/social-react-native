@@ -2,6 +2,7 @@ import { Text, FlatList, View } from "react-native"
 import React, { useEffect, useState } from "react"
 import { getUsers } from "../services/api"
 import styles from "../styles/User.styles.js"
+import User from "../components/User.js"
 
 function Users() {
   const [data, setData] = useState([])
@@ -21,7 +22,7 @@ function Users() {
         data={data}
         keyExtractor={({ id }) => id}
         renderItem={({ item }) => (
-          <Text style={styles.text}>{JSON.stringify(item)}</Text>
+          <User data={item}/>
         )}
       />
     </View>

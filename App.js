@@ -6,7 +6,6 @@ import styles from "./styles/App.styles"
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Hello World</Text>
       <Users />
       <StatusBar style="auto" />
     </View>
