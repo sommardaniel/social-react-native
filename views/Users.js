@@ -16,8 +16,6 @@ function Users({navigation}) {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>users</Text>
-
       <FlatList
         data={data}
         keyExtractor={({ id }) => id}

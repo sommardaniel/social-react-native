@@ -3,9 +3,9 @@ export default styles = StyleSheet.create({
   container: {
     justifyContent: "flex-start",
     fontSize: 15,
-    marginTop: 20,
     padding: 20,
     color: "#FFFF",
+    backgroundColor: "#242526",
     flexDirection: "column"
   },
   text: {
