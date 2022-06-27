@@ -3,18 +3,27 @@ export default styles = StyleSheet.create({
   container: {
     justifyContent: "flex-start",
     fontSize: 15,
-    padding: 20,
+    padding: 10,
     color: "#FFFF",
     backgroundColor: "#242526",
     flexDirection: "column"
   },
   text: {
     marginTop: 0,
-    marginBottom: 10,
+    marginBottom: 5,
     alignItems: "center",
-    fontSize: 15,
-    letterSpacing: 2,
+    fontSize: 12,
     textTransform: "uppercase",
+    color: "#FFFF",
+  },
+  textName: {
+    marginTop: 0,
+    marginBottom: 5,
+    alignItems: "center",
+    fontWeight: 'bold',
+    fontSize: 15,
+    letterSpacing: 1,
+    textTransform: "capitalize",
     color: "#FFFF",
   },
   title: {
@@ -26,8 +35,8 @@ export default styles = StyleSheet.create({
     color: "#FFFF",
   },
   image: {
-    width: 100, 
-    height: 100,
-    borderRadius: 10 
+    width: 40, 
+    height: 40,
+    borderRadius: 50 
   }
 })

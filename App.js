@@ -3,6 +3,8 @@ import User from "./views/User"
 import styles from "./styles/App.styles"
 import { NavigationContainer } from "@react-navigation/native"
 import { createNativeStackNavigator } from "@react-navigation/native-stack"
+import { enableScreens } from 'react-native-screens';
+enableScreens();
 
 const Stack = createNativeStackNavigator()
 const header = {
@@ -17,7 +19,7 @@ const header = {
 
 export default function App() {
   return (
-      <NavigationContainer style={styles.container}>
+      <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen name="Users" component={Users} options={header}/>
           <Stack.Screen name="User" component={User} options={header}/>

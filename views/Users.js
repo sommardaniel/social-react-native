@@ -1,4 +1,4 @@
-import { Text, FlatList, View, TouchableOpacity } from "react-native"
+import { FlatList, View, TouchableOpacity } from "react-native"
 import React, { useEffect, useState } from "react"
 import { getUsers } from "../services/api"
 import styles from "../styles/User.styles.js"
