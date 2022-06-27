@@ -9,7 +9,8 @@ export default styles = StyleSheet.create({
     flexDirection: "column"
   },
   text: {
-    marginTop: 15,
+    marginTop: 0,
+    marginBottom: 10,
     alignItems: "center",
     fontSize: 15,
     letterSpacing: 2,

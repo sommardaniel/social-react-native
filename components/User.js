@@ -12,7 +12,6 @@ function User(props) {
                     <Text style={{...styles.text, ...{color: props.data.lastSeen ? "green" : "red"}}}>Online</Text>
                 </View>
             </View>
-
         </View>
     )
 } 
