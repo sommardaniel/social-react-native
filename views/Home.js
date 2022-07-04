@@ -21,7 +21,6 @@ function Home({navigation}) {
         keyExtractor={({ id }) => id}
         renderItem={({ item }) => (
           <View>
-            {/* <Text>{JSON.stringify(item)}</Text> */}
             <TouchableOpacity>
               <Post data={item}  />
             </TouchableOpacity>

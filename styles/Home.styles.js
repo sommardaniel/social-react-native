@@ -34,7 +34,18 @@ export default styles = StyleSheet.create({
     textTransform: "uppercase",
     color: "#FFFF",
   },
+  cardFooter: {
+    padding: 10
+  },
+  cardHeader: {
+    padding: 10
+  },
+  cardBody: {
+    padding: 0
+  },
   image: {
+    width: 40,
+    height: 40,
     borderRadius: 5 
   }
 })
