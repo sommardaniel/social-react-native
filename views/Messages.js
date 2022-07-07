@@ -21,7 +21,9 @@ function Messages({navigation}) {
         keyExtractor={({ id }) => id}
         renderItem={({ item }) => (
           <View>
-            <TouchableOpacity onPress={() => navigation.navigate('Message', item)}>
+            <TouchableOpacity 
+              onPress={() => navigation.navigate('Message', item)}
+              delayPressIn={100}>
               <Message data={item}  />
             </TouchableOpacity>
           </View>

@@ -21,7 +21,9 @@ function Users({navigation}) {
         keyExtractor={({ id }) => id}
         renderItem={({ item }) => (
           <View>
-            <TouchableOpacity onPress={() => navigation.navigate('User', item)} >
+            <TouchableOpacity 
+              onPress={() => navigation.navigate('User', item)} 
+              delayPressIn={100}>
               <User data={item}  />
             </TouchableOpacity>
           </View>

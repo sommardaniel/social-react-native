@@ -27,7 +27,7 @@ function Post(props) {
             <View style={card.cardFooter}>
                 { props.route.params.title ? <Text style={{...styles.textName, textAlign: 'center'}}>{props.route.params.title}</Text> : null }
                 { props.route.params.text ? <Text style={styles.textName}>{props.route.params.text}</Text> : null } 
-                <Text style={{...styles.textName, textAlign: 'right'}}>{props.route.params.date}</Text> 
+                <Text style={{...styles.text, textAlign: 'right'}}>{props.route.params.date}</Text> 
             </View>
         </View>
     )
