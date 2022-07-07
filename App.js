@@ -34,7 +34,7 @@ const header = {
 function UsersStack() {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Users" component={Users} options={header}/>
+      <Stack.Screen name="UsersStack" component={Users} options={header}/>
       <Stack.Group screenOptions={{ presentation: 'modal'}}>
         <Stack.Screen name="User" component={User} options={header}/>
       </Stack.Group>
