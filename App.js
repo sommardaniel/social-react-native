@@ -1,4 +1,6 @@
 import Users from "./views/Users"
+import Messages from "./views/Messages"
+import Message from "./views/Message"
 import User from "./modals/User"
 import Post from "./modals/Post"
 import Home from "./views/Home"
@@ -12,6 +14,7 @@ enableScreens();
 
 const Stack = createNativeStackNavigator()
 const HomeStack = createNativeStackNavigator()
+const MessageStack = createNativeStackNavigator()
 const Tab = createBottomTabNavigator()
 const header = {
   headerStyle: {
@@ -59,6 +62,15 @@ function HomeStackNavigator() {
   )
 }
 
+function MessageStackNavigator() {
+  return (
+    <MessageStack.Navigator>
+      <MessageStack.Screen name="MessageStack" component={Messages} options={header}/>
+      <MessageStack.Screen name="Message" component={Message} options={{...header, tabBarShowLabel: true, headerShown: true }}/>
+    </MessageStack.Navigator>
+  )
+}
+
 export default function App() {
   return (
       <NavigationContainer>
@@ -66,11 +78,13 @@ export default function App() {
           screenOptions={({ route }) => ({
             tabBarIcon: ({ focused, color, size }) => {
               if (route.name === 'Home') return <Ionicons name={ focused ? 'ios-home' : 'ios-home-outline'} size={size} color={color} />
+              if (route.name === 'Messages') return <Ionicons name={ focused ? 'ios-mail' : 'ios-mail-outline'} size={size} color={color} />
               if (route.name === 'Users') return <Ionicons name={ focused ? 'ios-people' : 'ios-people-outline'} size={size} color={color} />
             }
           })}>
           <Tab.Screen name="Home" component={HomeStackNavigator} options={header}/>
           <Tab.Screen name="Users" component={UsersStack} options={header}/>
+          <Tab.Screen name="Messages" component={MessageStackNavigator} options={header}/>
         </Tab.Navigator>
       </NavigationContainer>
   )

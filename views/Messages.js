@@ -1,17 +1,17 @@
-import { FlatList, View, TouchableOpacity } from "react-native"
+import { FlatList, View, TouchableOpacity, Text } from "react-native"
 import React, { useEffect, useState } from "react"
-import { getPosts } from "../services/api"
+import { getMessages } from "../services/api"
 import styles from "../styles/Home.styles.js"
-import Post from "../components/Post.js"
+import Message from "../components/Message.js"
 
-function Home({navigation}) {
+function Messages({navigation}) {
   const [data, setData] = useState([])
-  async function getPostList() {
-    const data = await getPosts()
+  async function getMessageList() {
+    const data = await getMessages()
     setData(data)
   }
   useEffect(() => {
-    getPostList()
+    getMessageList()
   }, [])
 
   return (
@@ -21,8 +21,8 @@ function Home({navigation}) {
         keyExtractor={({ id }) => id}
         renderItem={({ item }) => (
           <View>
-            <TouchableOpacity onPress={() => navigation.navigate('Post', item)}>
-              <Post data={item}  />
+            <TouchableOpacity onPress={() => navigation.navigate('Message', item)}>
+              <Message data={item}  />
             </TouchableOpacity>
           </View>
           
@@ -31,4 +31,4 @@ function Home({navigation}) {
     </View>
   )
 }
-export default Home
+export default Messages
