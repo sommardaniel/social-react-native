@@ -1,5 +1,5 @@
 import Users from "./views/Users"
-import User from "./views/User"
+import User from "./modals/User"
 import Home from "./views/Home"
 import { NavigationContainer } from "@react-navigation/native"
 import { createNativeStackNavigator } from "@react-navigation/native-stack"
