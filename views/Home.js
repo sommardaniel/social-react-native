@@ -20,7 +20,7 @@ function Home({navigation}) {
         data={data}
         keyExtractor={({ id }) => id}
         renderItem={({ item }) => (
-          <View>
+          <View style={{marginBottom: 20}}>
             <TouchableOpacity>
               <Post data={item}  />
             </TouchableOpacity>
