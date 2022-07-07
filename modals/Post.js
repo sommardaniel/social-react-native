@@ -13,21 +13,21 @@ function Post(props) {
     return (
         <View style={{...card.card, marginBottom: 20}}>
             <View style={{...card.cardHeader, flexDirection: "row"}}>
-                <Image style={styles.image} source={{uri: `${cdn}${props.userImage}?size=s`}} />
+                <Image style={styles.image} source={{uri: `${cdn}${props.route.params.userImage}?size=s`}} />
                 <View style={{flexDirection: "column", paddingLeft: 20, marginTop: 10}}>
-                    <Text style={styles.textName}>{props.name}</Text>
+                    <Text style={styles.textName}>{props.route.params.name}</Text>
                 </View>
             </View>
             <View style={card.cardBody}>
                 <Image onLoad={({nativeEvent: {source: {width, height}}}) => {
                     setHeight(height - (width-imageWidth))
                 }}
-                 style={{height: height,  width: imageWidth }} source={{uri: `${cdn}${props.image}?size=m`}} />
+                 style={{height: height,  width: imageWidth }} source={{uri: `${cdn}${props.route.params.image}?size=m`}} />
             </View>
             <View style={card.cardFooter}>
-                { props.title ? <Text style={{...styles.textName, textAlign: 'center'}}>{props.title}</Text> : null }
-                { props.text ? <Text style={styles.textName}>{props.text}</Text> : null } 
-                <Text style={{...styles.textName, textAlign: 'right'}}>{props.date}</Text> 
+                { props.route.params.title ? <Text style={{...styles.textName, textAlign: 'center'}}>{props.route.params.title}</Text> : null }
+                { props.route.params.text ? <Text style={styles.textName}>{props.route.params.text}</Text> : null } 
+                <Text style={{...styles.textName, textAlign: 'right'}}>{props.route.params.date}</Text> 
             </View>
         </View>
     )

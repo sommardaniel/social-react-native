@@ -22,6 +22,9 @@ const header = {
     fontWeight: 'bold',
   },
   headerShown: false,
+  contentStyle:{
+    backgroundColor:'#242526'
+  },
   tabBarStyle:{
     backgroundColor: "#242526",
     borderTopWidth: 0
