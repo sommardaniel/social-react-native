@@ -1,6 +1,8 @@
 import Users from "./views/Users"
 import User from "./modals/User"
+import Post from "./modals/Post"
 import Home from "./views/Home"
+
 import { NavigationContainer } from "@react-navigation/native"
 import { createNativeStackNavigator } from "@react-navigation/native-stack"
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
@@ -9,6 +11,7 @@ import Ionicons from '@expo/vector-icons/Ionicons'
 enableScreens();
 
 const Stack = createNativeStackNavigator()
+const HomeStack = createNativeStackNavigator()
 const Tab = createBottomTabNavigator()
 const header = {
   headerStyle: {
@@ -42,6 +45,17 @@ function UsersStack() {
   )
 }
 
+function HomeStackNavigator() {
+  return (
+    <HomeStack.Navigator>
+      <HomeStack.Screen name="HomeStack" component={Home} options={header}/>
+      <HomeStack.Group screenOptions={{ presentation: 'modal'}}>
+        <HomeStack.Screen name="Post" component={Post} options={header}/>
+      </HomeStack.Group>
+    </HomeStack.Navigator>
+  )
+}
+
 export default function App() {
   return (
       <NavigationContainer>
@@ -52,7 +66,7 @@ export default function App() {
               if (route.name === 'Users') return <Ionicons name={ focused ? 'ios-people' : 'ios-people-outline'} size={size} color={color} />
             }
           })}>
-          <Tab.Screen name="Home" component={Home} options={header}/>
+          <Tab.Screen name="Home" component={HomeStackNavigator} options={header}/>
           <Tab.Screen name="Users" component={UsersStack} options={header}/>
         </Tab.Navigator>
       </NavigationContainer>
